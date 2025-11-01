@@ -32,6 +32,6 @@ func NewRunner(db txStarter, o pgx.TxOptions) (runner, error) {
 // Run wraps txFunc in pgx.BeginTxFunc with injected pgx.Tx into context and runs it.
 func (r runner) Run(ctx context.Context, txFunc func(ctx context.Context) error) error {
 	return pgx.BeginTxFunc(ctx, r.db, r.opts, func(tx pgx.Tx) error {
-		return txFunc(withTx(ctx, tx))
+		return txFunc(WithTx(ctx, tx))
 	})
 }

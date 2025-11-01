@@ -1,6 +1,6 @@
-module github.com/ysomad/pgxatomic
+module github.com/udisondev/pgxatomic
 
-go 1.19
+go 1.25
 
 require github.com/jackc/pgx/v5 v5.0.4
 
